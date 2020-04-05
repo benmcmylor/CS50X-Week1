@@ -10,7 +10,7 @@ CS50X Week 1 Problem Set
 <details>
   <summary>Task 1: Hello</summary>
   
-  [Submitted Source Code[() <br>
+  [Submitted Source Code[(https://github.com/benmcmylor/CS50X-Week1/blob/master/hello.c) <br>
   [Results](https://submit.cs50.io/check50/9030d5eb4287a9147235870b6a6970a51f162164)
 </details>
   
