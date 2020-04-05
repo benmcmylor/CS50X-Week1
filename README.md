@@ -14,3 +14,9 @@ CS50X Week 1 Problem Set
   [Results](https://submit.cs50.io/check50/9030d5eb4287a9147235870b6a6970a51f162164)
 </details>
   
+<details>
+  <summary>Task 2: Mario (harder)</summary>
+  
+  [Submitted Source Code]()<br>
+  [Results](https://submit.cs50.io/users/benmcmylor/cs50/problems/2020/x/mario/more)
+</details>
