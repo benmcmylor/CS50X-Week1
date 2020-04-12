@@ -11,8 +11,8 @@ int main (void)
     int length = 0;
 
     //launch do while loop to prompt user to input card number
-    do 
-    {
+    //do 
+    //{
         do 
         {
             //prompt user to enter card number
@@ -22,10 +22,10 @@ int main (void)
         }
         //reject inputs longer than 16 digits
         while (length > 16); 
-    }
+    //}
     //reject inputs shorter than 13 digits
-    while (length < 13);
-
+    //while (length < 13);
+    
     //check point
     //printf("Your card number is: %li\n", cardnum);
     //check point
@@ -33,6 +33,11 @@ int main (void)
 
     //initialise placeholder variable to find first digits of card number
     long first = cardnum;
+    //intialise placeholder for verifying the card number is legit
+    long num = cardnum;
+    //initialaise counters for verifiying card number
+    int lastdigit=0; int digitsum=0;
+
     //isolate first two digits of the card number
     while (first >= 99)
     {
@@ -45,7 +50,35 @@ int main (void)
         //check if syntax matches amex
         if (first == 34 || first == 37)
         {
-            printf("AMEX\n");
+            while (num != 0)
+            {
+                //count the final digit
+                digitsum = digitsum + (num % 10);
+                //remove last digit to start counting from penultimate number
+                num /= 10;
+                //isolate the last digit and double it
+                lastdigit = (num % 10)*2;
+                //if last double last digit is > 9, split the digits. Otherwise, sum the last digit 
+                if (lastdigit > 9)
+                {
+                    digitsum = (lastdigit % 10) + (lastdigit / 10) + digitsum;
+                }
+                else
+                {
+                    digitsum = digitsum + lastdigit;
+                }
+                //remove the last digit
+                num /=10;
+            }
+            //printf("Luhn's check = %i\n", digitsum);
+            if (digitsum % 10 == 0)
+            {
+                printf("AMEX\n");
+            }
+            else
+            {
+                printf("INVALID\n");
+            }
         }
         else
         {
@@ -58,12 +91,67 @@ int main (void)
         //check if syntax matches mastercard
         if (first >= 51 && first <= 55)
         {
-            printf("MASTERCARD\n");
+            while (num != 0)
+            {
+                //count the final digit
+                digitsum = digitsum + (num % 10);
+                //remove last digit to start counting from penultimate number
+                num /= 10;
+                //isolate the last digit and double it
+                lastdigit = (num % 10)*2;
+                //if last double last digit is > 9, split the digits. Otherwise, sum the last digit 
+                if (lastdigit > 9)
+                {
+                    digitsum = (lastdigit % 10) + (lastdigit / 10) + digitsum;
+                }
+                else
+                {
+                    digitsum = digitsum + lastdigit;
+                }
+                //remove the last digit
+                num /=10;
+            }
+            if (digitsum % 10 == 0)
+            {
+                printf("MASTERCARD\n");
+            }
+            else
+            {
+                printf("INVALID\n");
+            }
         }
         //check if syntax matches visa
         else if (first/10 == 4)
         {
-            printf("VISA\n");
+            while (num != 0)
+            {
+                //count the final digit
+                digitsum = digitsum + (num % 10);
+                //remove last digit to start counting from penultimate number
+                num /= 10;
+                //isolate the last digit and double it
+                lastdigit = (num % 10)*2;
+                //if last double last digit is > 9, split the digits. Otherwise, sum the last digit 
+                if (lastdigit > 9)
+                {
+                    digitsum = (lastdigit % 10) + (lastdigit / 10) + digitsum;
+                }
+                else
+                {
+                    digitsum = digitsum + lastdigit;
+                }
+                //remove the last digit
+                num /=10;
+            }
+            //printf("Luhn's check = %i\n", digitsum);
+            if (digitsum % 10 == 0)
+            {
+                printf("VISA\n");
+            }
+            else
+            {
+                printf("INVALID\n");
+            }
         }
         else
         {
@@ -73,7 +161,35 @@ int main (void)
     //check if length correct for short visa style and if syntax matches visa
     else if (length == 13 && first/10 == 4)
     {
-        printf("VISA\n");
+        while (num != 0)
+            {
+                //count the final digit
+                digitsum = digitsum + (num % 10);
+                //remove last digit to start counting from penultimate number
+                num /= 10;
+                //isolate the last digit and double it
+                lastdigit = (num % 10)*2;
+                //if last double last digit is > 9, split the digits. Otherwise, sum the last digit 
+                if (lastdigit > 9)
+                {
+                    digitsum = (lastdigit % 10) + (lastdigit / 10) + digitsum;
+                }
+                else
+                {
+                    digitsum = digitsum + lastdigit;
+                }
+                //remove the last digit
+                num /=10;
+            }
+            //printf("Luhn's check = %i\n", digitsum);
+            if (digitsum % 10 == 0)
+            {
+                printf("VISA\n");
+            }
+            else
+            {
+                printf("INVALID\n");
+            }
     }
     else 
     {
