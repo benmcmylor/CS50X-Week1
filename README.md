@@ -24,5 +24,6 @@ CS50X Week 1 Problem Set
 <details>
   <summary>Task 3: Credit (harder)</summary>
   
-  [WIP Source Code](https://github.com/benmcmylor/CS50X-Week1/blob/master/credit.c)
+  [WIP Source Code](https://github.com/benmcmylor/CS50X-Week1/blob/master/credit.c)<br>
+  [Results](https://submit.cs50.io/check50/8b9cb0be5669b4f1c114740a62ab80c7586077e3)
   </details>
